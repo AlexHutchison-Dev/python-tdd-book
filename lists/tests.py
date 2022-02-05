@@ -8,8 +8,7 @@ class HomePageTest(TestCase):
         self.assertTemplateUsed(response, "home.html")
 
     def test_can_save_a_POST_request(self):
-        response = self.client.post("/", data={"item_text": "A new list item"})
-
+        self.client.post("/", data={"item_text": "A new list item"})
         self.assertEqual(Item.objects.count(), 1)
         new_item = Item.objects.first()
         self.assertEqual(new_item.text, "A new list item")
@@ -29,8 +28,8 @@ class HomePageTest(TestCase):
 
         response = self.client.get("/")
 
-        self.asserIn("itemy 1", responce.content.decode())
-        self.asserIn("itemy 2", responce.content.decode())
+        self.asserIn("itemy 1", response.content.decode())
+        self.asserIn("itemy 2", response.content.decode())
 
 
 class ItemModelTest(TestCase):
