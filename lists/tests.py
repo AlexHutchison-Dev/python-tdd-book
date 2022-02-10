@@ -44,14 +44,14 @@ class ItemModelTest(TestCase):
 
 
 class ListViewTest(TestCase):
-    def test_displays_all_list_items(self):
-        Item.objects.create(text="itemy 1")
-        Item.objects.create(text="itemy 2")
+    def test_diplays_all_items(self):
+        Item.objects.create(text="itemey 1")
+        Item.objects.create(text="itemey 2")
 
         response = self.client.get("/lists/the-only-list-in-the-world/")
 
-        self.assertContains(response, "itemy 1")
-        self.assertContains(response, "itemy 2")
+        self.assertContains(response, "itemey 1")
+        self.assertContains(response, "itemey 2")
 
     def test_uses_list_template(self):
         response = self.client.get("/lists/the-only-list-in-the-world/")
