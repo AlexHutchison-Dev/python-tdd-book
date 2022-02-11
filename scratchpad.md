@@ -2,8 +2,7 @@
 ## Project notes and todo's
 
 ### ToDo
-
-* Suport multiple lists
+* Support multiple lists
 * Adjust model so items are associated with different lists
 * Add unique URLs for each list
 * Add a URL for creating a new list
