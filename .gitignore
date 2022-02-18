@@ -3,3 +3,4 @@ geckodriver.log
 virtualenv
 *.pyc
 .flake8
+/static
