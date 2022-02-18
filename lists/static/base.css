@@ -4,4 +4,6 @@ id_new_item {
 
 .jumbotron {
   padding: 2ex !important;
+  background-color: #821aac;
+  color: white;
 }

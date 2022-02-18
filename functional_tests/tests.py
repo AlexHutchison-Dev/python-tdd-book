@@ -1,3 +1,4 @@
+import os
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from time import sleep
 from selenium import webdriver
@@ -12,6 +13,9 @@ MAX_WAIT = 10
 class NewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
+        staging_server = os.environ.get("STAGING_SERVER")
+        if staging_server:
+            self.live_server_url = "http://" + staging_server
 
     def tearDown(self):
         self.browser.quit()
@@ -28,7 +32,6 @@ class NewVisitorTest(StaticLiveServerTestCase):
                 if time.time() - start_time > MAX_WAIT:
                     raise e
                 sleep(0.5)
-                
 
     def test_layout_and_styling(self):
         # Edith has heard about a cool new online to-do app.
