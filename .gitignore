@@ -4,3 +4,4 @@ virtualenv
 *.pyc
 .flake8
 /static
+.env
