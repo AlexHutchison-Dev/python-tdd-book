@@ -1,9 +1,16 @@
-id_new_item {
+#id_new_item {
   margin-top: 2ex;
+  width: 90% !important;
 }
 
 .jumbotron {
-  padding: 2ex !important;
+  padding: 5% !important;
   background-color: #821aac;
   color: white;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
